@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <base href="/beauty/" />
+    <link rel="icon" type="image/svg+xml" href="/beauty/favicon.svg" />
+    <meta name="generator" content="Hostinger Horizons" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Arabic" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://beauty.neomart.space/" />
+    <link rel="sitemap" type="application/xml" href="/beauty/sitemap.xml" />
+    <title>Neomart Beauty │ نيومارت بيوتي</title>
+    <meta name="description" content="نيومارت بيوتي - Beauty Neomart: متجر المنتجات التجميلية الأصلية والموثوقة. عناية بالبشرة والشعر والمكياج والعطور بأفضل الأسعار في العراق." />
+    <meta name="keywords" content="نيومارت بيوتي, beauty neomart, مستحضرات تجميل, عناية بالبشرة, عطور أصلية, مكياج" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="نيومارت بيوتي | Beauty Neomart" />
+    <meta property="og:description" content="متجر المنتجات التجميلية الأصلية والموثوقة. عناية بالبشرة والشعر والمكياج والعطور بأفضل الأسعار." />
+    <meta property="og:url" content="https://beauty.neomart.space/" />
+    <script type="module" crossorigin src="/beauty/js/index-BX1_w4IU.js"></script>
+    <link rel="modulepreload" crossorigin href="/beauty/js/vendor-supabase-BAEtZbt3.js">
+    <link rel="modulepreload" crossorigin href="/beauty/js/vendor-radix-CHWbFw3C.js">
+    <link rel="modulepreload" crossorigin href="/beauty/js/vendor-ui-DBzsC5_D.js">
+    <link rel="stylesheet" crossorigin href="/beauty/css/index-BfoznR8Z.css">
+    <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+    <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+    <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+    <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
